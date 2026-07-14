@@ -52,6 +52,14 @@ padding:100px 10%;
     </ul>
 
 </nav>
+.menu-toggle{
+
+display:none;
+font-size:32px;
+cursor:pointer;
+color:white;
+
+}
 .hero{
 
 height:100vh;
@@ -204,7 +212,7 @@ text-align:center;
 
 .hero h1{
 
-font-size:42px;
+font-size:40px;
 
 }
 
@@ -214,8 +222,41 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
+/* MENÚ */
+
+.menu-toggle{
+
+display:block;
+
 }
 
+nav{
+
+padding:18px 7%;
+
+}
+
+nav ul{
+
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#08182c;
+flex-direction:column;
+display:none;
+padding:25px 0;
+gap:25px;
+
+}
+
+nav ul.active{
+
+display:flex;
+
+}
+
+}
 </style>
 
 </head>
@@ -566,7 +607,28 @@ Víctor Gibran Montiel Gutiérrez
 Performance Marketing Specialist
 
 </footer>
+<script>
 
+const toggle=document.getElementById("menu-toggle");
+const menu=document.getElementById("menu");
+
+toggle.addEventListener("click",()=>{
+
+menu.classList.toggle("active");
+
+});
+
+document.querySelectorAll("#menu a").forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+menu.classList.remove("active");
+
+});
+
+});
+
+</script>
 </body>
 
 </html>
