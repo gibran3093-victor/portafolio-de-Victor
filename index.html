@@ -1,634 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Víctor Gibran Montiel | Performance Marketing</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-
-background:#061425;
-color:white;
-
-}
-
-section{
-
-padding:100px 10%;
-
-}
-
-<nav>
-
-    <h2>VGM</h2>
-
-    <div class="menu-toggle" id="menu-toggle">
-        ☰
-    </div>
-
-    <ul id="menu">
-
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#cases">Casos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-
-    </ul>
-
-</nav>
-.menu-toggle{
-
-display:none;
-font-size:32px;
-cursor:pointer;
-color:white;
-
-}
-.hero{
-
-height:100vh;
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-}
-
-.hero-text{
-
-max-width:650px;
-
-}
-
-.hero h1{
-
-font-size:60px;
-line-height:1.1;
-
-}
-
-.hero span{
-
-color:#4FA3FF;
-
-}
-
-.hero p{
-
-margin-top:25px;
-font-size:18px;
-line-height:32px;
-color:#cfd7e6;
-
-}
-
-.btn{
-
-display:inline-block;
-margin-top:35px;
-padding:18px 35px;
-background:#147BFF;
-border-radius:50px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-transition:.3s;
-
-}
-
-.btn:hover{
-
-background:#2d94ff;
-
-}
-
-.card{
-
-background:#0D2037;
-padding:40px;
-border-radius:20px;
-margin-top:35px;
-transition:.4s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-
-}
-
-.title{
-
-font-size:42px;
-margin-bottom:40px;
-
-}
-
-.service-icon{
-
-font-size:45px;
-margin-bottom:20px;
-
-}
-
-.stats{
-
-display:grid;
-grid-template-columns:repeat(4,1fr);
-text-align:center;
-gap:30px;
-
-}
-
-.stats h2{
-
-font-size:55px;
-color:#4FA3FF;
-
-}
-
-.case{
-
-background:#0D2037;
-border-radius:25px;
-overflow:hidden;
-
-}
-
-.case img{
-
-width:100%;
-display:block;
-
-}
-
-.case-content{
-
-padding:30px;
-
-}
-
-footer{
-
-padding:50px;
-text-align:center;
-background:#08182c;
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+body{background:#061425;color:#fff}
+nav{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(8,24,44,.95);backdrop-filter:blur(8px);z-index:999}
+.logo{color:#58a6ff;font-weight:800}
+nav ul{display:flex;list-style:none;gap:28px}
+nav a{text-decoration:none;color:#fff}
+nav a:hover{color:#58a6ff}
+.menu-toggle{display:none;font-size:30px;cursor:pointer}
+section{padding:90px 8%}
+.hero{min-height:100vh;display:flex;align-items:center}
+.hero h1{font-size:56px;line-height:1.1}
+.hero span{color:#58a6ff}
+.hero p{margin:20px 0;max-width:700px;color:#c8d5e6;line-height:1.8}
+.btn{display:inline-block;background:#147BFF;color:#fff;padding:14px 28px;border-radius:40px;text-decoration:none}
+.title{font-size:40px;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card,.case{background:#0d2037;border-radius:18px;padding:24px}
+.case img{width:100%;height:220px;object-fit:cover;border-radius:12px;background:#1f3656}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;text-align:center}
+.stats h2{color:#58a6ff;font-size:44px}
+footer{padding:40px;text-align:center;background:#08182c}
 @media(max-width:900px){
-
-.hero{
-
-flex-direction:column;
-justify-content:center;
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.stats{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-/* MENÚ */
-
-.menu-toggle{
-
-display:block;
-
-}
-
-nav{
-
-padding:18px 7%;
-
-}
-
-nav ul{
-
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:#08182c;
-flex-direction:column;
-display:none;
-padding:25px 0;
-gap:25px;
-
-}
-
-nav ul.active{
-
-display:flex;
-
-}
-
+.menu-toggle{display:block}
+nav ul{display:none;position:absolute;top:72px;left:0;width:100%;background:#08182c;flex-direction:column;padding:20px}
+nav ul.active{display:flex}
+.hero h1{font-size:38px}
 }
 </style>
-
 </head>
-
 <body>
-
 <nav>
-
-<h2>VGM</h2>
-
-<ul>
-
+<div class="logo">VGM</div>
+<div class="menu-toggle" id="toggle">&#9776;</div>
+<ul id="menu">
 <li><a href="#about">Sobre mí</a></li>
 <li><a href="#services">Servicios</a></li>
 <li><a href="#cases">Casos</a></li>
 <li><a href="#contact">Contacto</a></li>
-
 </ul>
-
 </nav>
 
 <section class="hero">
-
-<div class="hero-text">
-
-<h1>
-
-Hola, soy <span>Víctor Gibran Montiel Gutiérrez</span>
-
-</h1>
-
-<p>
-
-Especialista en Performance Marketing con más de 7 años de experiencia desarrollando campañas de alto rendimiento en Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads y estrategias de Email Marketing.
-
-Mi enfoque está basado en datos, optimización continua y generación de resultados reales para empresas de distintos sectores.
-
-</p>
-
-<a href="#cases" class="btn">Ver Casos de Éxito</a>
-
+<div>
+<h1>Hola, soy <span>Víctor Gibran Montiel Gutiérrez</span></h1>
+<p>Especialista en Performance Marketing con más de 7 años de experiencia gestionando campañas en Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads y Email Marketing.</p>
+<a class="btn" href="#cases">Ver Casos de Éxito</a>
 </div>
-
 </section>
 
 <section id="about">
-
-<h2 class="title">
-
-Sobre mí
-
-</h2>
-
+<h2 class="title">Sobre mí</h2>
 <div class="card">
-
-<p style="line-height:35px;font-size:18px;">
-
-Tengo 33 años y durante más de siete años he trabajado desarrollando estrategias digitales para empresas del sector salud, educación, inmobiliario, restaurantes, industria y servicios.
-
-He administrado campañas enfocadas en generación de leads, incremento de ventas, posicionamiento de marca y optimización de inversión publicitaria.
-
-Especialidades:
-
-<br><br>
-
-✔ Google Ads
-
+<p>Tengo 33 años y experiencia desarrollando campañas para sectores como salud, educación, industria, inmobiliario, restaurantes y servicios.</p>
 <br>
-
-✔ Meta Ads
-
-<br>
-
-✔ TikTok Ads
-
-<br>
-
-✔ LinkedIn Ads
-
-<br>
-
-✔ Email Marketing
-
-<br>
-
-✔ CRO
-
-<br>
-
-✔ Landing Pages
-
-<br>
-
-✔ Google Analytics
-
-<br>
-
-✔ Google Tag Manager
-
-<br>
-
-✔ Looker Studio
-
-</p>
-
+<p><strong>Especialidades:</strong> Google Ads · Meta Ads · TikTok Ads · LinkedIn Ads · Email Marketing · GA4 · GTM · Looker Studio · CRO.</p>
 </div>
-
 </section>
 
 <section id="services">
-
-<h2 class="title">
-
-Servicios
-
-</h2>
-
+<h2 class="title">Servicios</h2>
 <div class="grid">
-
-<div class="card">
-
-<div class="service-icon">📈</div>
-
-<h3>Google Ads</h3>
-
-<p>Campañas Search, Display, Performance Max, YouTube y Remarketing.</p>
-
+<div class="card"><h3>Google Ads</h3><p>Search, Display, PMax y YouTube.</p></div>
+<div class="card"><h3>Meta Ads</h3><p>Leads, Ventas y WhatsApp.</p></div>
+<div class="card"><h3>TikTok Ads</h3><p>Branding y adquisición.</p></div>
+<div class="card"><h3>LinkedIn Ads</h3><p>Generación de prospectos B2B.</p></div>
+<div class="card"><h3>Email Marketing</h3><p>Automatizaciones.</p></div>
+<div class="card"><h3>Analítica</h3><p>GA4, GTM y dashboards.</p></div>
 </div>
-
-<div class="card">
-
-<div class="service-icon">📱</div>
-
-<h3>Meta Ads</h3>
-
-<p>Generación de leads, ventas, WhatsApp y campañas con IA.</p>
-
-</div>
-
-<div class="card">
-
-<div class="service-icon">🚀</div>
-
-<h3>TikTok Ads</h3>
-
-<p>Estrategias para adquisición de clientes y branding.</p>
-
-</div>
-
-<div class="card">
-
-<div class="service-icon">💼</div>
-
-<h3>LinkedIn Ads</h3>
-
-<p>Captación de prospectos B2B.</p>
-
-</div>
-
-<div class="card">
-
-<div class="service-icon">📧</div>
-
-<h3>Email Marketing</h3>
-
-<p>Automatizaciones y nutrición de prospectos.</p>
-
-</div>
-
-<div class="card">
-
-<div class="service-icon">📊</div>
-
-<h3>Analítica</h3>
-
-<p>GA4, Tag Manager, Looker Studio y optimización basada en datos.</p>
-
-</div>
-
-</div>
-
 </section>
 
 <section>
-
-<h2 class="title">
-
-Resultados
-
-</h2>
-
+<h2 class="title">Resultados</h2>
 <div class="stats">
-
-<div>
-
-<h2>7+</h2>
-
-<p>Años</p>
-
+<div><h2>7+</h2><p>Años</p></div>
+<div><h2>500+</h2><p>Campañas</p></div>
+<div><h2>15+</h2><p>Sectores</p></div>
+<div><h2>MX</h2><p>Cobertura</p></div>
 </div>
-
-<div>
-
-<h2>500+</h2>
-
-<p>Campañas</p>
-
-</div>
-
-<div>
-
-<h2>15+</h2>
-
-<p>Sectores</p>
-
-</div>
-
-<div>
-
-<h2>MX</h2>
-
-<p>Cobertura Nacional</p>
-
-</div>
-
-</div>
-
 </section>
 
 <section id="cases">
-
-<h2 class="title">
-
-Casos de éxito
-
-</h2>
-
+<h2 class="title">Casos de éxito</h2>
 <div class="grid">
-
-<div class="case">
-
-<img src="imagenes/caso1.jpg">
-
-<div class="case-content">
-
-<h3>Centro Médico de Alta Especialidad</h3>
-
-<p>
-
-Aquí podrás colocar el resumen del proyecto, inversión, objetivos, resultados obtenidos y las gráficas correspondientes.
-
-</p>
-
+<div class="case"><img src="imagenes/caso1.jpg"><h3>Centro Médico de Alta Especialidad</h3><p>Agrega aquí tus gráficas, KPIs y resultados.</p></div>
+<div class="case"><img src="imagenes/caso2.jpg"><h3>Dr. Alejandro López</h3><p>Espacio para capturas y métricas.</p></div>
+<div class="case"><img src="imagenes/caso3.jpg"><h3>Nuevo Caso</h3><p>Duplica esta tarjeta para nuevos proyectos.</p></div>
 </div>
-
-</div>
-
-<div class="case">
-
-<img src="imagenes/caso2.jpg">
-
-<div class="case-content">
-
-<h3>Dr. Alejandro López - Cirugía Plástica</h3>
-
-<p>
-
-Espacio para explicar el caso de éxito y colocar capturas de Google Ads, Meta Ads, ROAS, CPA, CTR, etc.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="case">
-
-<img src="imagenes/caso3.jpg">
-
-<div class="case-content">
-
-<h3>Nuevo Caso</h3>
-
-<p>
-
-Duplica esta tarjeta para agregar todos tus proyectos.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <section id="contact">
-
-<h2 class="title">
-
-Contacto
-
-</h2>
-
+<h2 class="title">Contacto</h2>
 <div class="card">
-
-<h3>
-
-¿Listo para hacer crecer tu negocio?
-
-</h3>
-
-<br>
-
-<p>
-
-Correo:
-
-<br>
-
-victor@email.com
-
-<br><br>
-
-LinkedIn
-
-<br>
-
-WhatsApp
-
-<br>
-
-Behance
-
-</p>
-
+<p>Correo: tucorreo@email.com</p>
+<p>LinkedIn | Behance | WhatsApp</p>
 </div>
-
 </section>
 
-<footer>
+<footer>© 2026 Víctor Gibran Montiel Gutiérrez</footer>
 
-© 2026
-
-Víctor Gibran Montiel Gutiérrez
-
-Performance Marketing Specialist
-
-</footer>
 <script>
-
-const toggle=document.getElementById("menu-toggle");
-const menu=document.getElementById("menu");
-
-toggle.addEventListener("click",()=>{
-
-menu.classList.toggle("active");
-
-});
-
-document.querySelectorAll("#menu a").forEach(item=>{
-
-item.addEventListener("click",()=>{
-
-menu.classList.remove("active");
-
-});
-
-});
-
+const t=document.getElementById('toggle');
+const m=document.getElementById('menu');
+t.onclick=()=>m.classList.toggle('active');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>m.classList.remove('active'));
 </script>
 </body>
-
 </html>
