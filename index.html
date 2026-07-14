@@ -15,10 +15,23 @@ nav a{text-decoration:none;color:#fff}
 nav a:hover{color:#58a6ff}
 .menu-toggle{display:none;font-size:30px;cursor:pointer}
 section{padding:90px 8%}
-  
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+}  
 .hero-text{
 
 flex:1;
+  max-width:650px;
 
 }
 
@@ -67,21 +80,58 @@ transform:scale(1.05);
 .stats h2{color:#58a6ff;font-size:44px}
 footer{padding:40px;text-align:center;background:#08182c}
 @media(max-width:900px){
-  .hero{
 
-flex-direction:column-reverse;
+.menu-toggle{
+    display:block;
+}
 
-text-align:center;
+nav ul{
+
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#08182c;
+    flex-direction:column;
+    padding:20px;
+    text-align:center;
+
+}
+
+nav ul.active{
+
+    display:flex;
+
+}
+
+.hero{
+
+    flex-direction:column-reverse;
+    justify-content:center;
+    text-align:center;
+    padding-top:130px;
+
+}
+
+.hero-text{
+
+    max-width:100%;
+
+}
+
+.hero h1{
+
+    font-size:38px;
 
 }
 
 .hero-image img{
 
-width:260px;
+    width:260px;
+    margin-bottom:30px;
 
-height:260px;
-
-margin-bottom:40px;
+}
 
 }
 .menu-toggle{display:block}
