@@ -15,7 +15,46 @@ nav a{text-decoration:none;color:#fff}
 nav a:hover{color:#58a6ff}
 .menu-toggle{display:none;font-size:30px;cursor:pointer}
 section{padding:90px 8%}
-.hero{min-height:100vh;display:flex;align-items:center}
+  
+.hero-text{
+
+flex:1;
+
+}
+
+.hero-image{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:420px;
+
+height:420px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:6px solid #147BFF;
+
+box-shadow:0 0 40px rgba(20,123,255,.35);
+
+transition:.4s;
+
+}
+
+.hero-image img:hover{
+
+transform:scale(1.05);
+
+}
 .hero h1{font-size:56px;line-height:1.1}
 .hero span{color:#58a6ff}
 .hero p{margin:20px 0;max-width:700px;color:#c8d5e6;line-height:1.8}
@@ -28,6 +67,23 @@ section{padding:90px 8%}
 .stats h2{color:#58a6ff;font-size:44px}
 footer{padding:40px;text-align:center;background:#08182c}
 @media(max-width:900px){
+  .hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:260px;
+
+height:260px;
+
+margin-bottom:40px;
+
+}
 .menu-toggle{display:block}
 nav ul{display:none;position:absolute;top:72px;left:0;width:100%;background:#08182c;flex-direction:column;padding:20px}
 nav ul.active{display:flex}
@@ -48,11 +104,32 @@ nav ul.active{display:flex}
 </nav>
 
 <section class="hero">
-<div>
-<h1>Hola, soy <span>Víctor Gibran Montiel Gutiérrez</span></h1>
-<p>Especialista en Performance Marketing con más de 7 años de experiencia gestionando campañas en Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads y Email Marketing.</p>
-<a class="btn" href="#cases">Ver Casos de Éxito</a>
-</div>
+
+    <div class="hero-text">
+
+        <h1>
+            Hola, soy
+            <span>Víctor Gibran Montiel</span>
+        </h1>
+
+        <p>
+            Especialista en Performance Marketing con más de 7 años de experiencia
+            administrando campañas en Google Ads, Meta Ads, TikTok Ads,
+            LinkedIn Ads y Email Marketing.
+        </p>
+
+        <a href="#cases" class="btn">
+            Ver Casos de Éxito
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="img/victor.png" alt="Víctor Gibran">
+
+    </div>
+
 </section>
 
 <section id="about">
