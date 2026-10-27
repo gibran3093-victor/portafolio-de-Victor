@@ -1,248 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Víctor Gibran Montiel | Performance Marketing</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gibran Montiel · Paid Media</title>
+<meta name="description" content="Víctor Gibrán Montiel Gutiérrez, Especialista en Paid Media, Trafficker Digital y Project Manager. Google Ads, Meta Ads, TikTok Ads y LinkedIn Ads. Generación de leads, reducción de CPA y aumento de ROAS.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Víctor Gibrán Montiel Gutiérrez","jobTitle":"Especialista en Paid Media","email":"gibran3093@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Nezahualcóyotl","addressRegion":"Estado de México","addressCountry":"MX"},"knowsAbout":["Paid Media","Performance Marketing","SEM","PPC","Google Ads","Meta Ads","TikTok Ads","LinkedIn Ads","Generación de leads","Optimización de CPA","ROAS","Google Analytics","Project Management"],"alumniOf":"Universidad de Negocios ISEC"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
-body{background:#061425;color:#fff}
-nav{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(8,24,44,.95);backdrop-filter:blur(8px);z-index:999}
-.logo{color:#58a6ff;font-weight:800}
-nav ul{display:flex;list-style:none;gap:28px}
-nav a{text-decoration:none;color:#fff}
-nav a:hover{color:#58a6ff}
-.menu-toggle{display:none;font-size:30px;cursor:pointer}
-section{padding:90px 8%}
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:70px;
-
-}  
-.hero-text{
-
-flex:1;
-  max-width:650px;
-
+/* Layout: barra lateral fija (identidad, contacto, especialidad) + columna principal con cifras y secciones numeradas 01–06. Oscuro primero, como un panel de anuncios de noche. */
+:root{
+  --bg:#0c1220; --panel:#111a2e; --raise:#16213a; --ink:#edf1fa; --muted:#9aa5bf; --line:#22304d;
+  --accent:#ffb51f; --accent-ink:#1a1300; --cyan:#4cc0f0; --track:#1d2a45;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:dark;
 }
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f3f5fa; --panel:#ffffff; --raise:#eef2f9; --ink:#0f1b3d; --muted:#56607a; --line:#dde2ee;
+  --accent:#e09500; --accent-ink:#1a1300; --cyan:#1a8fc4; --track:#e3e9f4; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f3f5fa; --panel:#ffffff; --raise:#eef2f9; --ink:#0f1b3d; --muted:#56607a; --line:#dde2ee;
+  --accent:#e09500; --accent-ink:#1a1300; --cyan:#1a8fc4; --track:#e3e9f4; color-scheme:light}
 
-.hero-image{
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.mono{font-family:var(--mono)}
 
-flex:1;
+.shell{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:330px minmax(0,1fr);gap:40px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 48px}
 
-display:flex;
+/* ---------- Sidebar ---------- */
+aside{position:sticky;top:calc(24px + env(safe-area-inset-top,0px));align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:grid;gap:26px}
+.id{display:grid;gap:14px;justify-items:start}
+.photo{width:112px;aspect-ratio:1;max-width:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px var(--panel),0 0 0 5px var(--accent)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.id h1{font-size:28px;font-weight:800;letter-spacing:-.01em}
+.id .role{color:var(--muted);font-size:15px}
+.avail{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--mono);color:var(--ink);background:var(--raise);padding:8px 10px;border-radius:999px}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#3ccf7a;box-shadow:0 0 0 3px rgba(60,207,122,.2)}
+.blk h2{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.contact{display:grid;gap:10px}
+.crow{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.crow div{min-width:0}
+.ck{font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cv{font-size:14px;overflow-wrap:anywhere;user-select:all;margin-top:3px}
+.copy{flex:none;font:600 11px/1 var(--mono);padding:7px 9px;border-radius:7px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+.bars{display:grid;gap:14px}
+.bar-row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:baseline}
+.bar-row b{font-weight:600;font-size:15px}
+.bar-row .pct{font:600 13px/1 var(--mono);color:var(--accent);font-variant-numeric:tabular-nums}
+.bar-row small{grid-column:1/-1;color:var(--muted);font-size:12.5px;line-height:1.3}
+.track{grid-column:1/-1;height:5px;border-radius:3px;background:var(--track);margin-top:6px;overflow:hidden}
+.track i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--accent));border-radius:3px}
+.cta{display:block;text-align:center;text-decoration:none;font:700 15px/1 var(--body);padding:15px 16px;border-radius:12px;background:var(--accent);color:var(--accent-ink)}
+.cta:hover{filter:brightness(1.05)}
 
-justify-content:center;
+/* ---------- Main ---------- */
+main{min-width:0;display:grid;gap:56px}
+nav.top{display:flex;flex-wrap:wrap;gap:6px;padding:6px;background:var(--panel);border:1px solid var(--line);border-radius:12px;width:fit-content;max-width:100%}
+nav.top a{text-decoration:none;font:500 14px/1 var(--body);padding:10px 12px;border-radius:8px;color:var(--muted)}
+nav.top a:hover{color:var(--ink);background:var(--raise)}
+.intro{display:grid;gap:22px}
+.intro .kicker{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.intro h2{font-size:clamp(34px,5.4vw,60px);font-weight:800;letter-spacing:-.02em;max-width:16ch}
+.intro h2 em{font-style:normal;color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.stat{padding:20px 18px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .n{font:800 clamp(26px,3.4vw,36px)/1 var(--display);font-variant-numeric:tabular-nums}
+.stat .n span{color:var(--accent)}
+.stat .l{margin-top:8px;font-size:13.5px;line-height:1.35;color:var(--muted)}
 
+section{scroll-margin-top:24px;display:grid;gap:26px}
+.sh{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.sh .num{font:600 14px/1 var(--mono);color:var(--accent)}
+.sh h2{font-size:clamp(26px,3.4vw,34px);font-weight:700}
+.prose{display:grid;gap:14px;max-width:68ch;color:var(--muted);font-size:17px}
+.prose b{color:var(--ink);font-weight:600}
+
+/* Experiencia */
+.jobs{display:grid;gap:14px}
+.job{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:grid;gap:10px}
+.job-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.dates{font:600 13px/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.pill{font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:6px;background:var(--raise);color:var(--muted)}
+.pill.now{background:var(--accent);color:var(--accent-ink)}
+.job h3{font-size:22px;font-weight:700}
+.job .co{color:var(--cyan);font-weight:600;margin-top:-4px}
+.job p.d{color:var(--muted);max-width:70ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font:500 12px/1 var(--mono);padding:6px 8px;border:1px solid var(--line);border-radius:6px;color:var(--ink)}
+
+/* Educación */
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.edu-item{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;gap:6px;align-content:start}
+.edu-item .k{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.edu-item h3{font-size:19px;font-weight:700}
+.edu-item p{color:var(--muted);font-size:15px}
+.edu-item ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:6px}
+.edu-item li b{color:var(--ink);font-weight:600}
+
+/* Servicios */
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.svc{background:var(--panel);padding:22px 22px;display:grid;gap:8px;align-content:start}
+.svc .k{font:600 12px/1 var(--mono);color:var(--accent)}
+.svc h3{font-size:19px;font-weight:700}
+.svc p{color:var(--muted);font-size:15px}
+
+/* Casos por sector */
+.sectors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.case.feat{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:24px;align-items:center;padding:24px}
+.feat-text{display:grid;gap:12px;min-width:0}
+.case.feat h3{font-size:26px}
+.metrics.big .mv{color:var(--ink);font-size:22px}
+.metrics.big .metric:nth-child(-n+2) .mv{color:var(--accent)}
+.shot{margin:0;display:grid;gap:8px;min-width:0}
+.shot img{width:100%;height:auto;border-radius:10px;background:#fff;border:1px solid var(--line);display:block}
+.shot figcaption{font:400 12px/1.4 var(--mono);color:var(--muted)}
+.case{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;align-content:start;min-width:0}
+.case-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.case h3{font-size:20px;font-weight:700}
+.slot{aspect-ratio:16/9;max-width:100%;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;padding:10px}
+.case p{color:var(--muted);font-size:14.5px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.metric{padding:9px 10px;border-radius:8px;background:var(--raise)}
+.metric .mk{font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.metric .mv{font:700 18px/1.2 var(--display);margin-top:5px;color:var(--muted)}
+
+/* Herramientas */
+.tools{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tools li{background:var(--panel);padding:16px 18px;display:grid;gap:2px}
+.tools b{font-weight:600}
+.tools small{color:var(--muted);font-size:13px}
+
+footer{color:var(--muted);font:400 12px/1.5 var(--mono);border-top:1px solid var(--line);padding-top:20px}
+
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr;gap:28px}
+  aside{position:static}
 }
-
-.hero-image img{
-
-width:420px;
-
-height:420px;
-
-object-fit:cover;
-
-border-radius:50%;
-
-border:6px solid #147BFF;
-
-box-shadow:0 0 40px rgba(20,123,255,.35);
-
-transition:.4s;
-
+@media (max-width:760px){
+  .sectors{grid-template-columns:1fr}
+  .case.feat{grid-template-columns:1fr}
 }
-
-.hero-image img:hover{
-
-transform:scale(1.05);
-
-}
-.hero h1{font-size:56px;line-height:1.1}
-.hero span{color:#58a6ff}
-.hero p{margin:20px 0;max-width:700px;color:#c8d5e6;line-height:1.8}
-.btn{display:inline-block;background:#147BFF;color:#fff;padding:14px 28px;border-radius:40px;text-decoration:none}
-.title{font-size:40px;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.card,.case{background:#0d2037;border-radius:18px;padding:24px}
-.case img{width:100%;height:220px;object-fit:cover;border-radius:12px;background:#1f3656}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;text-align:center}
-.stats h2{color:#58a6ff;font-size:44px}
-footer{padding:40px;text-align:center;background:#08182c}
-@media(max-width:900px){
-
-.menu-toggle{
-    display:block;
-}
-
-nav ul{
-
-    display:none;
-    position:absolute;
-    top:72px;
-    left:0;
-    width:100%;
-    background:#08182c;
-    flex-direction:column;
-    padding:20px;
-    text-align:center;
-
-}
-
-nav ul.active{
-
-    display:flex;
-
-}
-
-.hero{
-
-    flex-direction:column-reverse;
-    justify-content:center;
-    text-align:center;
-    padding-top:130px;
-
-}
-
-.hero-text{
-
-    max-width:100%;
-
-}
-
-.hero h1{
-
-    font-size:38px;
-
-}
-
-.hero-image img{
-
-    width:200px;
-    height:200px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    margin-bottom:25px;
-
-}
-
-}
-.menu-toggle{display:block}
-nav ul{display:none;position:absolute;top:72px;left:0;width:100%;background:#08182c;flex-direction:column;padding:20px}
-nav ul.active{display:flex}
-.hero h1{font-size:38px}
+@media (max-width:700px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .edu,.services{grid-template-columns:1fr}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .job{padding:18px}
 }
 </style>
 </head>
 <body>
-<nav>
-<div class="logo">VGM</div>
-<div class="menu-toggle" id="toggle">&#9776;</div>
-<ul id="menu">
-<li><a href="#about">Sobre mí</a></li>
-<li><a href="#services">Servicios</a></li>
-<li><a href="#cases">Casos</a></li>
-<li><a href="#contact">Contacto</a></li>
-</ul>
-</nav>
 
-<section class="hero">
-
-    <div class="hero-text">
-
-        <h1>
-            Hola, soy
-            <span>Víctor Gibran Montiel</span>
-        </h1>
-
-        <p>
-            Especialista en Performance Marketing con más de 7 años de experiencia
-            administrando campañas en Google Ads, Meta Ads, TikTok Ads,
-            LinkedIn Ads y Email Marketing.
-        </p>
-
-        <a href="#cases" class="btn">
-            Ver Casos de Éxito
-        </a>
-
+<div class="shell">
+  <aside aria-label="Perfil">
+    <div class="id">
+      <div class="photo"><img alt="Foto de Víctor Gibrán Montiel" src="foto.jpg"></div>
+      <div>
+        <h1>Víctor Gibrán Montiel Gutiérrez</h1>
+        <p class="role">Paid Media · Trafficker Digital · Project Manager</p>
+      </div>
+      <span class="avail">Disponible para proyectos</span>
     </div>
 
-    <div class="hero-image">
-
-        <img src="WhatsApp Image 2026-07-14 at 12.59.38.jpeg" alt="Víctor Gibran">
-
+    <div class="blk">
+      <h2>Contacto</h2>
+      <div class="contact">
+        <div class="crow"><div><div class="ck">Correo</div><div class="cv">gibran3093@gmail.com</div></div><button class="copy" id="c-mail" data-v="gibran3093@gmail.com">Copiar</button></div>
+        <div class="crow"><div><div class="ck">WhatsApp</div><div class="cv">56 3818 0885</div></div><button class="copy" id="c-tel" data-v="5638180885">Copiar</button></div>
+        <div class="crow"><div><div class="ck">Ubicación</div><div class="cv">Nezahualcóyotl, Edo. Méx.</div></div></div>
+      </div>
     </div>
 
-</section>
+    <div class="blk">
+      <h2>Especialidad</h2>
+      <div class="bars">
+        <div class="bar-row"><b>Google Ads</b><span class="pct">95%</span><small>Search, Display y conversiones</small><div class="track"><i style="width:95%"></i></div></div>
+        <div class="bar-row"><b>Meta Ads</b><span class="pct">95%</span><small>Facebook e Instagram · leads</small><div class="track"><i style="width:95%"></i></div></div>
+        <div class="bar-row"><b>TikTok Ads</b><span class="pct">85%</span><small>Performance y alcance</small><div class="track"><i style="width:85%"></i></div></div>
+        <div class="bar-row"><b>LinkedIn Ads</b><span class="pct">85%</span><small>B2B y generación de leads</small><div class="track"><i style="width:85%"></i></div></div>
+        <div class="bar-row"><b>Analítica y reportes</b><span class="pct">85%</span><small>Google Analytics · KPIs · forecasting</small><div class="track"><i style="width:85%"></i></div></div>
+      </div>
+    </div>
 
-<section id="about">
-<h2 class="title">Sobre mí</h2>
-<div class="card">
-<p>Tengo 33 años y experiencia desarrollando campañas para sectores como salud, educación, industria, inmobiliario, restaurantes y servicios.</p>
-<br>
-<p><strong>Especialidades:</strong> Google Ads · Meta Ads · TikTok Ads · LinkedIn Ads · Email Marketing · GA4 · GTM · Looker Studio · CRO.</p>
+    <div class="blk">
+      <h2>Sígueme</h2>
+      <div class="contact">
+        <div class="crow"><div><div class="ck">LinkedIn</div><div class="cv">Victor.Gibran.Montiel.Gutierrez</div></div><button class="copy" id="c-in" data-v="Victor Gibran Montiel Gutierrez">Copiar</button></div>
+      </div>
+    </div>
+
+    <a class="cta" href="#contacto">Agenda una llamada</a>
+  </aside>
+
+  <main>
+    <nav class="top" aria-label="Secciones">
+      <a href="#sobre-mi">Sobre mí</a><a href="#experiencia">Experiencia</a><a href="#educacion">Educación</a><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#herramientas">Herramientas</a>
+    </nav>
+
+    <div class="intro">
+      <p class="kicker">Especialista en Paid Media &amp; Performance</p>
+      <h2>Campañas que bajan el CPA y <em>escalan cuentas</em></h2>
+      <div class="stats">
+        <div class="stat"><div class="n">7<span>+</span></div><div class="l">Años en marketing digital</div></div>
+        <div class="stat"><div class="n"><span>$</span>500K</div><div class="l">MXN mensuales en inversión gestionada</div></div>
+        <div class="stat"><div class="n"><span>+</span>1,000</div><div class="l">Leads generados al mes</div></div>
+        <div class="stat"><div class="n">3<span>x</span></div><div class="l">Incremento de ROAS</div></div>
+      </div>
+    </div>
+
+    <section id="sobre-mi">
+      <div class="sh"><span class="num">01</span><h2>Sobre mí</h2></div>
+      <div class="prose">
+        <p>Soy <b>Licenciado en Mercadotecnia</b> y especialista en <b>Paid Media y Performance Marketing</b>, con más de 7 años en campañas de <b>generación de leads</b> y <b>escalamiento de cuentas</b> en Google Ads, Meta Ads, TikTok Ads y LinkedIn Ads.</p>
+        <p>Trabajo con datos: analizo funnels de conversión, optimizo pujas y audiencias, y reporto resultados con proyecciones claras. He logrado reducir el CPA entre 25% y 40% y aumentar el ROAS hasta 3x.</p>
+        <p>También coordino proyectos y cuentas de clientes de principio a fin: planeación, ejecución, seguimiento y presentación de resultados.</p>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="sh"><span class="num">02</span><h2>Experiencia</h2></div>
+      <div class="jobs">
+        <article class="job">
+          <div class="job-meta"><span class="dates">2022 — Actual</span><span class="pill now">Puesto actual</span></div>
+          <h3>Coordinador de Paid Media</h3>
+          <p class="co">Digital Crew</p>
+          <p class="d">Optimizo campañas en Google Ads, Meta Ads, TikTok Ads y LinkedIn Ads, con una reducción del CPA de 30%. Diseño estrategias publicitarias con presupuestos mensuales mayores a $500K MXN, elaboro reportes y proyecciones de resultados, y coordino las cuentas de clientes desde la planeación hasta la presentación de resultados.</p>
+          <div class="tags"><span>Google Ads</span><span>Meta Ads</span><span>TikTok Ads</span><span>LinkedIn Ads</span><span>Reducción de CPA</span><span>Forecasting</span><span>Gestión de cuentas</span></div>
+        </article>
+        <article class="job">
+          <div class="job-meta"><span class="dates">2020 — Jun 2021</span><span class="pill">Senior</span></div>
+          <h3>Community Manager Sr.</h3>
+          <p class="co">Rack Aries SA de CV · Perfekblue</p>
+          <p class="d">Desarrollé estrategias de marca y campañas en Google Ads y Facebook Ads con manejo de presupuesto. Planifiqué la parrilla de contenido, la fidelización de marca y la dirección de arte. Di atención al cliente, resolví quejas, di seguimiento y cerré ventas, con reportes mensuales de desempeño.</p>
+          <div class="tags"><span>Google Ads</span><span>Facebook Ads</span><span>Estrategia de contenido</span><span>Dirección de arte</span><span>Cierre de ventas</span></div>
+        </article>
+        <article class="job">
+          <div class="job-meta"><span class="dates">2019 — 2020</span><span class="pill">Inicio</span></div>
+          <h3>Analista de Marketing</h3>
+          <p class="co">Creartón</p>
+          <p class="d">Gestioné el proceso de CRM: prospección, segmentación y cotización. Creé campañas en Google Ads y Facebook Ads, di seguimiento a ventas y postventa, y elaboré publicaciones, retoque de imágenes y reportes mensuales.</p>
+          <div class="tags"><span>CRM</span><span>Segmentación</span><span>Google Ads</span><span>Facebook Ads</span><span>Postventa</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="educacion">
+      <div class="sh"><span class="num">03</span><h2>Educación</h2></div>
+      <div class="edu">
+        <div class="edu-item">
+          <span class="k">Licenciatura</span>
+          <h3>Licenciatura en Mercadotecnia</h3>
+          <p>Universidad de Negocios ISEC · Titulado</p>
+        </div>
+        <div class="edu-item">
+          <span class="k">Certificaciones</span>
+          <ul>
+            <li><b>Google Ads Search</b> · Google</li>
+            <li><b>Community Manager</b> (Google Ads y Meta Ads) · ICEEX</li>
+            <li><b>Marketing Digital para Negocios</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="sh"><span class="num">04</span><h2>Servicios</h2></div>
+      <div class="services">
+        <div class="svc"><span class="k">Paid Media</span><h3>Gestión de campañas</h3><p>Estructura, lanzamiento y optimización diaria en Google, Meta, TikTok y LinkedIn Ads.</p></div>
+        <div class="svc"><span class="k">Leads</span><h3>Generación de leads y funnels</h3><p>Funnels de conversión enfocados en bajar el CPA y subir la calidad del lead.</p></div>
+        <div class="svc"><span class="k">Escala</span><h3>Escalamiento de cuentas</h3><p>Crecimiento de presupuesto sin perder rentabilidad, cuidando ROAS y costo por resultado.</p></div>
+        <div class="svc"><span class="k">Datos</span><h3>Reportes y proyecciones</h3><p>Reportes de KPIs, monitoreo de campañas y forecasting de resultados para cada cliente.</p></div>
+        <div class="svc"><span class="k">Project Management</span><h3>Coordinación de cuentas</h3><p>Planeación, tiempos, seguimiento con el cliente y presentación de resultados.</p></div>
+        <div class="svc"><span class="k">Social</span><h3>Estrategia en redes</h3><p>Parrilla de contenido, fidelización de marca y dirección de arte para anuncios.</p></div>
+      </div>
+    </section>
+
+    <section id="casos">
+      <div class="sh"><span class="num">05</span><h2>Cuentas por sector</h2></div>
+      <div class="sectors">
+        <article class="case feat" id="salud">
+          <div class="feat-text">
+            <div class="case-top"><span class="pill now">Salud</span><span class="dates">Dic 2025 — Oct 2026</span></div>
+            <h3>Centro médico</h3>
+            <p>Campañas de generación de leads para un centro médico, con más de 4,000 pacientes potenciales captados y un retorno de 8.74 pesos por cada peso invertido.</p>
+            <div class="metrics big">
+              <div class="metric"><div class="mk">Ganancias</div><div class="mv">+$3M</div></div>
+              <div class="metric"><div class="mk">ROAS</div><div class="mv">8.74</div></div>
+              <div class="metric"><div class="mk">Leads</div><div class="mv">+4,000</div></div>
+              <div class="metric"><div class="mk">Inversión</div><div class="mv">$500K</div></div>
+            </div>
+          </div>
+          <figure class="shot">
+            <img alt="Gráfica de Google Ads del centro médico: 3.87 mil conversiones, costo por conversión de $128, 23.7 mil clics y $494 mil de costo, del 29 dic 2025 al 26 oct 2026" src="caso-salud.jpg">
+            <figcaption>Google Ads · 29 dic 2025 – 26 oct 2026 · 3.87 mil conversiones · $128 por conversión · 23.7 mil clics</figcaption>
+          </figure>
+        </article>
+        <article class="case" id="educativo">
+          <div class="case-top"><h3>Educativo</h3><span class="pill">Próximamente</span></div>
+          <div class="slot">Logo o captura de la cuenta</div>
+          <p>Cliente, objetivo de la campaña y estrategia aplicada.</p>
+          <div class="metrics"><div class="metric"><div class="mk">ROAS</div><div class="mv">—</div></div><div class="metric"><div class="mk">CPA</div><div class="mv">—</div></div><div class="metric"><div class="mk">Leads</div><div class="mv">—</div></div><div class="metric"><div class="mk">Inversión</div><div class="mv">—</div></div></div>
+        </article>
+        <article class="case" id="privada">
+          <div class="case-top"><h3>Empresa privada</h3><span class="pill">Próximamente</span></div>
+          <div class="slot">Logo o captura de la cuenta</div>
+          <p>Cliente, objetivo de la campaña y estrategia aplicada.</p>
+          <div class="metrics"><div class="metric"><div class="mk">ROAS</div><div class="mv">—</div></div><div class="metric"><div class="mk">CPA</div><div class="mv">—</div></div><div class="metric"><div class="mk">Leads</div><div class="mv">—</div></div><div class="metric"><div class="mk">Inversión</div><div class="mv">—</div></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="herramientas">
+      <div class="sh"><span class="num">06</span><h2>Herramientas y plataformas</h2></div>
+      <ul class="tools">
+        <li><b>Google Ads</b><small>Search · Display</small></li>
+        <li><b>Meta Ads</b><small>Facebook · Instagram</small></li>
+        <li><b>TikTok Ads</b><small>Performance</small></li>
+        <li><b>LinkedIn Ads</b><small>B2B</small></li>
+        <li><b>Google Analytics</b><small>Medición</small></li>
+        <li><b>Google Sheets</b><small>Reportes</small></li>
+        <li><b>Mailchimp</b><small>Email marketing</small></li>
+        <li><b>Kommo CRM</b><small>Seguimiento de leads</small></li>
+        <li><b>WordPress</b><small>Landing pages</small></li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <div class="sh"><span class="num">—</span><h2>¿Hablamos de tu próxima campaña?</h2></div>
+      <div class="prose"><p>Escríbeme a <b>gibran3093@gmail.com</b> o por WhatsApp al <b>56 3818 0885</b>.</p></div>
+    </section>
+
+    <footer>© 2026 Víctor Gibrán Montiel Gutiérrez · Paid Media &amp; Performance</footer>
+  </main>
 </div>
-</section>
-
-<section id="services">
-<h2 class="title">Servicios</h2>
-<div class="grid">
-<div class="card"><h3>Google Ads</h3><p>Search, Display, PMax y YouTube.</p></div>
-<div class="card"><h3>Meta Ads</h3><p>Leads, Ventas y WhatsApp.</p></div>
-<div class="card"><h3>TikTok Ads</h3><p>Branding y adquisición.</p></div>
-<div class="card"><h3>LinkedIn Ads</h3><p>Generación de prospectos B2B.</p></div>
-<div class="card"><h3>Email Marketing</h3><p>Automatizaciones.</p></div>
-<div class="card"><h3>Analítica</h3><p>GA4, GTM y dashboards.</p></div>
-</div>
-</section>
-
-<section>
-<h2 class="title">Resultados</h2>
-<div class="stats">
-<div><h2>7+</h2><p>Años</p></div>
-<div><h2>500+</h2><p>Campañas</p></div>
-<div><h2>15+</h2><p>Sectores</p></div>
-<div><h2>MX</h2><p>Cobertura</p></div>
-</div>
-</section>
-
-<section id="cases">
-<h2 class="title">Casos de éxito</h2>
-<div class="grid">
-<div class="case"><img src="imagenes/caso1.jpg"><h3>Centro Médico de Alta Especialidad</h3><p>Agrega aquí tus gráficas, KPIs y resultados.</p></div>
-<div class="case"><img src="imagenes/caso2.jpg"><h3>Dr. Alejandro López</h3><p>Espacio para capturas y métricas.</p></div>
-<div class="case"><img src="imagenes/caso3.jpg"><h3>Nuevo Caso</h3><p>Duplica esta tarjeta para nuevos proyectos.</p></div>
-</div>
-</section>
-
-<section id="contact">
-<h2 class="title">Contacto</h2>
-<div class="card">
-<p>Correo: tucorreo@email.com</p>
-<p>LinkedIn | Behance | WhatsApp</p>
-</div>
-</section>
-
-<footer>© 2026 Víctor Gibran Montiel Gutiérrez</footer>
 
 <script>
-const t=document.getElementById('toggle');
-const m=document.getElementById('menu');
-t.onclick=()=>m.classList.toggle('active');
-document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>m.classList.remove('active'));
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var v=b.dataset.v, done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(b.previousElementSibling.querySelector('.cv'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seleccionado'};
+    try{navigator.clipboard.writeText(v).then(done,sel)}catch(e){sel()}
+  });
+});
+try{var h=location.hash.slice(1);if(h){var t=document.getElementById(h);if(t)t.scrollIntoView()}}catch(e){}
 </script>
+
 </body>
 </html>
